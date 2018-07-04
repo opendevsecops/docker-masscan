@@ -18,6 +18,7 @@ RUN git clone https://github.com/robertdavidgraham/masscan
 WORKDIR /masscan
 
 RUN make -j
-RUN chmod +s /masscan/bin/masscan
+RUN make install
+RUN chmod +s /usr/bin/masscan
 
-ENTRYPOINT ["/masscan/bin/masscan"]
+ENTRYPOINT ["/usr/bin/masscan"]
